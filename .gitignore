@@ -1,0 +1,10 @@
+# Requested exclusions
+/NOTEBOOK_CHANGELOG.md
+/dataset/
+
+# Downloaded dataset files
+/cifar-10-batches-py/
+
+# Local environment files
+.DS_Store
+.ipynb_checkpoints/
