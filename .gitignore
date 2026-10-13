@@ -4,7 +4,7 @@
 
 # Downloaded dataset files
 /cifar-10-batches-py/
-
+/cifar-10-image-classification-with-cnn.ipynb/
 # Local environment files
 .DS_Store
 .ipynb_checkpoints/
