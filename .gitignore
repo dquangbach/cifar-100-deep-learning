@@ -4,7 +4,7 @@
 
 # Downloaded dataset files
 /cifar-10-batches-py/
-
+/cifar-100/
 # Local environment files
 .DS_Store
 .ipynb_checkpoints/
