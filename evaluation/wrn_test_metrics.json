@@ -1,0 +1,10 @@
+{
+  "checkpoint": "cifar100_wrn16_4_aug200_best.keras",
+  "test_samples": 10000,
+  "test_loss": 0.9530239105224609,
+  "test_accuracy": 0.7405,
+  "test_top5_accuracy": 0.9313,
+  "macro_precision": 0.7417846368751236,
+  "macro_recall": 0.7404999999999999,
+  "macro_f1": 0.7397165970810511
+}

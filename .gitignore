@@ -10,3 +10,13 @@
 # Local environment files
 .DS_Store
 .ipynb_checkpoints/
+
+# Python package and new run artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+/artifacts/
+/build/
+/dist/
