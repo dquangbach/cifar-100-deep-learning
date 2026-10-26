@@ -2,15 +2,39 @@
 
 Project chính là bài toán phân loại ảnh CIFAR-100 bằng Wide ResNet-16-4. Mã train và đánh giá nằm trong package Python `cifar_classifier`, được chuyển từ `build_wrn_cifar_100.ipynb`. Các notebook và thí nghiệm cũ vẫn ở vị trí hiện tại.
 
+Sơ đồ mô hình: [Wide ResNet architecture](wide_resnet_architecture.pdf).
+
 ## Cài đặt
 
-Dùng Python 3.10 trở lên. Chạy từ thư mục gốc project:
+Dùng Python 3.10 trở lên. Từ thư mục chứa project, chạy:
 
 ```bash
+cd cifar-100-deep-learning
 python -m pip install -e .
 ```
 
 Dữ liệu CIFAR-100 dạng Python pickle cần nằm ở `cifar-100/`, gồm ba file `train`, `test`, `meta`. Có thể chỉ định vị trí khác bằng `--data-dir`.
+
+## Thứ tự chạy pipeline
+
+**Dùng checkpoint đã có** — không cần train lại:
+
+```bash
+python -m cifar_classifier plot-history
+python -m cifar_classifier evaluate
+```
+
+**Train lại từ đầu** — chạy train, vẽ history, rồi đánh giá checkpoint vừa tạo:
+
+```bash
+python -m cifar_classifier train
+python -m cifar_classifier plot-history --history artifacts/runs/TEN_RUN/history.csv
+python -m cifar_classifier evaluate \
+  --checkpoint artifacts/runs/TEN_RUN/best.keras \
+  --output-dir artifacts/runs/TEN_RUN/test-evaluation
+```
+
+Sau bước train, thay `TEN_RUN` bằng tên thư mục mới được in ra và tạo trong `artifacts/runs/`. Lệnh `evaluate` không có `--checkpoint` luôn dùng checkpoint cũ trong `checkpoints/`.
 
 ## Đánh giá checkpoint hiện có
 
