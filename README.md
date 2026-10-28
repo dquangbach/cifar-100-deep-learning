@@ -58,6 +58,8 @@ Lệnh đọc hai CSV WRN trong `checkpoints/` và tạo một hình accuracy/lo
 python -m cifar_classifier plot-history --history artifacts/runs/TEN_RUN/history.csv
 ```
 
+Để xem trực quan các phép augment, mở `build_wrn_cifar_100.ipynb` và chạy từ đầu đến hai cell **Preview** trước phần xây dựng model; không cần chạy các cell train. Notebook hiển thị cùng ảnh trước/sau augmentation và so sánh MixUp với CutMix. Hình được lưu tại `artifacts/plots/wrn_before_after_augmentation.png` và `artifacts/plots/wrn_mixup_cutmix_preview.png`.
+
 ## Train một model mới
 
 ```bash
